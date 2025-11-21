@@ -117,7 +117,6 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, debug_fr
                     opt.opacity_reg_lr = opt.opacity_reg_lr * 0.8
                 elif value > opacity_goal * 1.1:
                     opt.opacity_reg_lr = opt.opacity_reg_lr * 1.2
-                print(opt.opacity_reg_lr)
 
             if iteration < opt.reg_start + 1000:
                 rate_l = torch.max(torch.ones_like(gaussians.get_opacity) * 0.05, 1 - gaussians.get_opacity)
