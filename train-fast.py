@@ -188,7 +188,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, debug_fr
                         budget = opt.final_budget * 2
                     else:
                         budget = int(math.sqrt(rate) * opt.final_budget * 2)
-                    gaussians.densify_and_prune_Improved(gaussian_importance, 0.005, budget, opt, iteration, scene.cameras_extent)
+                    gaussians.densify_and_prune_Improved(gaussian_importance, 0.005, budget, opt, iteration)
                 if iteration == 1000 or iteration == 2000:
                     gaussians.reset_opacity(0.05)
                 if iteration == 1300 or iteration == 2300:
@@ -222,7 +222,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, debug_fr
                         budget = opt.final_budget * 2
                     else:
                         budget = int(math.sqrt(rate) * opt.final_budget * 2)
-                    gaussians.densify_and_prune_Improved(gaussian_importance, 0.005, budget, opt, iteration, scene.cameras_extent)
+                    gaussians.densify_and_prune_Improved(gaussian_importance, 0.005, budget, opt, iteration)
             elif opt.s2 <= iteration < opt.e2:
                 if iteration == opt.s2:
                     gaussians.update_opacity_lr(4)
