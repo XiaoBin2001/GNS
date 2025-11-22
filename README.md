@@ -66,6 +66,14 @@ data
 
 You can also run the code in the same way as 3DGS.
 
+## Running FastSplatting
+
+The recently popular work FastGS[https://github.com/fastgs/FastGS] achieves 3DGS training in just 100 seconds. However, upon analyzing its code, I found that the methods proposed in its paper are not essential for achieving fast training. Drawing inspiration from the tricks used in FastGS, I also developed a version called FastSplatting, which completes scene training in approximately 100 seconds while significantly outperforming FastGS in final quality. You can use this version by running `test-fast.py`. Since the tricks for accelerating training inevitably affect rendering quality, this version is suitable for rapid debugging rather than training high-quality scenes.
+
+**Tricks Used in FastGS**: FastGS achieves fast training through the proposed VCD, VCP, and CompactBox. However, in practice, it employs AbsGS's densification method, one-time opacity pruning with a threshold of 0.1, sparseSH that updates SH coefficients every 16 iterations, and multi-view updates with N=32 and 64. The CompactBox it uses is identical to that of Speedy Splat, yet it is still presented as a major contribution in the paper. When we manually disable VCD (using only AbsGS) and VCP (using only opacity pruning), there is almost no impact on training speed or rendering quality.
+
+**Implementation of FastSplatting**: Inspired by FastGS's tricks, we incorporated Speedy Splat's CompactBox and sparseSH. Since the Improved-GS densification method used in NGS converges quickly, we opted to reduce the total number of training iterations. To minimize GPU memory usage, we replaced the original 33% pruning with two rounds of 50% densification-pruning. Overall, this version of FastSplatting requires no innovation and is achieved solely through some clever tricks. Thanks to its superior densification and pruning strategies, FastSplatting achieves higher training quality than FastGS within the same training time.
+
 ## Parameters
 
 The code has integrated an automatic adjustment mechanism for the regularization learning rate, so you only need to provide the `final-budget` parameter to automatically train a high-quality compact model.
