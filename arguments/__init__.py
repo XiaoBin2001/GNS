@@ -107,6 +107,11 @@ class OptimizationParams(ParamGroup):
         self.reg_end = 23000
         self.prune_reg = True
 
+        self.s1 = 3000
+        self.e1 = 6000
+        self.s2 = 7000
+        self.e2 = 10000
+
         super().__init__(parser, "Optimization Parameters")
 
 
