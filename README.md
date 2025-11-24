@@ -4,7 +4,7 @@
 
 ### Zhejiang University
 
-## [Paper](main.pdf)| [arXiv]| [Project Page](https://xiaobin2001.github.io/GNS-web/)|
+## [Paper](main.pdf)| [arXiv](https://arxiv.org/abs/2511.16980)| [Project Page](https://xiaobin2001.github.io/GNS-web/)|
 
 ![figure_intro](assets/figure_intro.png)
 
