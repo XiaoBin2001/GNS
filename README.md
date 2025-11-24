@@ -13,7 +13,6 @@
 <video src="assets/video_psnr_num.mp4"></video>
 
 
-
 ## Qualitative Result
 
 <video src="assets/bicycle.mp4"></video>
@@ -82,13 +81,33 @@ The code has integrated an automatic adjustment mechanism for the regularization
 
 Our work does not introduce additional parameters to the Gaussian ellipsoids, which means you can use any 3DGS viewer to visualize the trained scenes. We recommend [SuperSplat](https://superspl.at/editor) as a viewer.
 
+## Acknowledgments
+
+This project is built upon the open-source code of [TamingGS](https://github.com/humansensinglab/taming-3dgs) and [ImprovedGS](https://github.com/XiaoBin2001/Improved-GS). We sincerely thank the authors for their excellent work.
+
 ## Citation
 
 Bibtex
 ```
-
+@misc{deng2025gradientdrivennaturalselectioncompact,
+      title={Gradient-Driven Natural Selection for Compact 3D Gaussian Splatting}, 
+      author={Xiaobin Deng and Qiuli Yu and Changyu Diao and Min Li and Duanqing Xu},
+      year={2025},
+      eprint={2511.16980},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.16980}, 
+}
 ```
 
-## Acknowledgments
-
-This project is built upon the open-source code of [TamingGS](https://github.com/humansensinglab/taming-3dgs). We sincerely thank the authors for their excellent work.
+```
+@misc{deng2025improvingdensification3dgaussian,
+      title={Improving Densification in 3D Gaussian Splatting for High-Fidelity Rendering}, 
+      author={Xiaobin Deng and Changyu Diao and Min Li and Ruohan Yu and Duanqing Xu},
+      year={2025},
+      eprint={2508.12313},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2508.12313}, 
+}
+```
